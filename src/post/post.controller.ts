@@ -16,11 +16,11 @@ import { UserDto } from './usecases/dto/user.dto';
 
 @Controller('posts')
 @ApiTags('posts')
-@ApiBearerAuth()
-@UseGuards(UserJwtGuard)
 export class PostController {
   constructor(private readonly interactor: PostInteractor) {}
 
+  @ApiBearerAuth()
+  @UseGuards(UserJwtGuard)
   @Post()
   create(@Body() dto: CreatePostDto, @User() user: UserDto) {
     dto.userId = user.userId;
@@ -37,6 +37,8 @@ export class PostController {
     return this.interactor.findOne(slug);
   }
 
+  @ApiBearerAuth()
+  @UseGuards(UserJwtGuard)
   @Delete(':id')
   remove(@Param('id') id: string, @User() user: UserDto) {
     return this.interactor.remove(id, user.userId);
