@@ -9,7 +9,7 @@ export default registerAs('config', () => ({
     path: process.env.DOCUMENTATION_PATH,
   },
   database: {
-    mysql: {
+    pg: {
       type: process.env.DATABASE_DRIVER,
       host: process.env.DATABASE_HOST,
       port: +process.env.DATABASE_PORT,
