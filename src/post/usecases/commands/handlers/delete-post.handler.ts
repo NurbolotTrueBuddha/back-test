@@ -7,7 +7,7 @@ export class DeletePostHandler implements ICommandHandler<Command> {
   constructor(private readonly connection: Connection) {}
 
   async execute(command: Command) {
-    const { slug, userId } = command;
+    const { id, userId } = command;
 
     const queryRunner = this.connection.createQueryRunner();
     await queryRunner.connect();
@@ -15,8 +15,8 @@ export class DeletePostHandler implements ICommandHandler<Command> {
     try {
       await queryRunner.startTransaction();
       await queryRunner.query(
-        'DELETE FROM posts WHERE slug = $1 AND user_id = $2',
-        [slug, userId],
+        'DELETE FROM posts WHERE id = $1 AND user_id = $2',
+        [id, userId],
       );
       await queryRunner.commitTransaction();
     } catch (err) {

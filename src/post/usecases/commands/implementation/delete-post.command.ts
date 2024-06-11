@@ -1,6 +1,6 @@
 export class DeletePostCommand {
   constructor(
-    public readonly slug: string,
+    public readonly id: string,
     public readonly userId: string,
   ) {}
 }
