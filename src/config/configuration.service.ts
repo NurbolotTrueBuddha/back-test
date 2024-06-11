@@ -32,6 +32,6 @@ export class ConfigurationService {
   }
 
   get database(): TypeOrmModuleOptions {
-    return this.config.get<TypeOrmModuleOptions>('config.database.mysql');
+    return this.config.get<TypeOrmModuleOptions>('config.database.pg');
   }
 }
