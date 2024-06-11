@@ -37,8 +37,8 @@ export class PostController {
     return this.interactor.findOne(slug);
   }
 
-  @Delete(':slug')
-  remove(@Param('slug') slug: string, @User() user: UserDto) {
-    return this.interactor.remove(slug, user.userId);
+  @Delete(':id')
+  remove(@Param('id') id: string, @User() user: UserDto) {
+    return this.interactor.remove(id, user.userId);
   }
 }
