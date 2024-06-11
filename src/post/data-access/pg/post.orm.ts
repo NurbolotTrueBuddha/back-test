@@ -7,6 +7,9 @@ export class Post {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column()
+  userId: string;
+
   @Column({ unique: true })
   slug: string;
 
