@@ -8,6 +8,7 @@ import { DataAccess } from './data-access';
 import { ConfigurationModule } from 'src/config/configuration.module';
 import { Framework } from './framework';
 import { ConfigurationService } from 'src/config/configuration.service';
+import { AuthController } from './auth.controller';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { ConfigurationService } from 'src/config/configuration.service';
       signOptions: { expiresIn: '3h' },
     }),
   ],
+  controllers: [AuthController],
   providers: [AuthService, ...Framework, ConfigurationService],
   exports: [AuthService],
 })

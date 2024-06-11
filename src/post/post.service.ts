@@ -11,10 +11,10 @@ export class PostService {
     private readonly postRepository: Repository<Post>,
   ) {}
 
-  async create(postData): Promise<Post> {
-    const post = this.postRepository.create(postData);
-    return this.postRepository.save(post);
-  }
+  // async create(postData): Promise<Post> {
+  //   const post = this.postRepository.create(postData);
+  //   return this.postRepository.save(post);
+  // }
 
   async findAll(): Promise<Post[]> {
     return this.postRepository.find();

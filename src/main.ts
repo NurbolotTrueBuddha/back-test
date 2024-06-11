@@ -12,8 +12,8 @@ async function bootstrap() {
 
   if (environment !== Environments.PRODUCTION) {
     const config = new DocumentBuilder()
-      .setTitle('Expeditor')
-      .setDescription('REST API for expeditor app and outlet')
+      .setTitle('UhoMuho')
+      .setDescription('REST API for UhoMuho app')
       .setVersion('1.0')
       .addBearerAuth()
       .setExternalDoc('Postman Collection', `${host}/${swagger.path}-json`)
